@@ -32,8 +32,11 @@ export function toggleTodo(id, completed) {
 }
 
 export function addTodo(title) {
+  const start = Date.now();
+  const idValue = start.toString();
+
   todos.value = [
     ...todos.value,
-    { id: crypto.randomUUID(), title, completed: false },
+    { id: idValue, title, completed: false },
   ]
 }
